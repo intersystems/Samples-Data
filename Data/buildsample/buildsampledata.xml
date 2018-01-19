@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2017.2 (Build 744U)" ts="2018-01-19 10:35:38">
+<Routine name="buildsampledata" type="MAC" languagemode="0" timestamp="64667,38018.605215"><![CDATA[
+ //buildsampledata
+ // Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
+
+    write !, "This is the setup routine for the SampleData sample, which provides"
+    write !, "several persistent classes with data."
+    write !
+
+	write !, "Please specify the directory that contains the SampleData sample."
+	write !, "(This is the directory that contains the /buildsample, /cls, and gbl subdirectories.)", !
+	read stagingroot
+	
+	if $ZSTRIP(stagingroot,"<>W")="" {
+		write !, "Not a valid directory... Quitting."
+		quit
+	}
+	if '##class(%File).Exists(stagingroot) {
+		write !, "Not a valid directory... Quitting."
+		quit
+	}
+	 	
+ 	write !, "Loading and compiling classes..."
+ 	set dir=stagingroot_"/cls/"
+ 	do $system.OBJ.LoadDir(dir,"ck",,1)
+ 	
+ 	write !, "Loading data..."
+ 	set file=stagingroot_"/gbl/EmployeePictures.xml"
+ 	do $system.OBJ.Load(file)
+ 	
+ 	write !, "Running the Sample.Utils::Generate() method..."
+ 	do ##class(Sample.Utils).Generate()
+ 	
+ 	write !, "Now the classes and data are available. The SQL package name is Sample."
+ 	write !, "Try SQL queries in the Management Portal or in the SQL shell."
+ 	write !, "To access the SQL shell, enter: do $system.SQL.Shell()"
+        write !, "Sample query: SELECT * from Sample.Person"
+ 	write !, "See the documentation for more information."
+
+ 	
+
+]]></Routine>
+
+
+</Export>
