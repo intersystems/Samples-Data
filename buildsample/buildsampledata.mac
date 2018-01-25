@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2017.2 (Build 744U)" ts="2018-01-19 10:35:38">
-<Routine name="buildsampledata" type="MAC" languagemode="0" timestamp="64667,38018.605215"><![CDATA[
+ROUTINE buildsampledata
  //buildsampledata
  // Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
-
+ 
     write !, "This is the setup routine for the SampleData sample, which provides"
     write !, "several persistent classes with data."
     write !
@@ -40,7 +38,3 @@
 
  	
 
-]]></Routine>
-
-
-</Export>
