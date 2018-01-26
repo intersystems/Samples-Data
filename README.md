@@ -52,8 +52,8 @@ Setup instructions
    ZN "namespace"
 4. Enter the following commands, where dir is the directory that contains this repo:
    <p>set file=dir_"/buildsample/buildsampledata.mac"<p>
-  <p> do $system.OBJ.Load(file,"ck")<p>
-  <p> do ^buildsampledata<p>
-  <p>This loads & starts a routine that will load the rest of the sample and generate the data.<p>
+   <p>do $system.OBJ.Load(file,"ck")<p>
+   <p>do ^buildsampledata<p>
+   <p>This loads & starts a routine that will load the rest of the sample and generate the data.<p>
 5. Then answer the prompts.
 
