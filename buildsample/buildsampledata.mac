@@ -1,40 +1,80 @@
 ROUTINE buildsampledata
- //buildsampledata
+ // This is buildsampledata from https://github.com/intersystems/Samples-Data
  // Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
- 
-    write !, "This is the setup routine for the SampleData sample, which provides"
-    write !, "several persistent classes with data."
+
+    write !, "This is the setup routine for the Samples-Data sample, which provides several"
+    write !, "persistent classes with data, for use with InterSystems IRIS Data Platform."
     write !
 
-	write !, "Please specify the directory that contains the SampleData sample."
-	write !, "(This is the directory that contains the /buildsample, /cls, and gbl subdirectories.)", !
-	read stagingroot
-	
-	if $ZSTRIP(stagingroot,"<>W")="" {
-		write !, "Not a valid directory... Quitting."
-		quit
-	}
-	if '##class(%File).Exists(stagingroot) {
-		write !, "Not a valid directory... Quitting."
-		quit
-	}
-	 	
- 	write !, "Loading and compiling classes..."
- 	set dir=stagingroot_"/cls/"
- 	do $system.OBJ.LoadDir(dir,"ck",,1)
- 	
- 	write !, "Loading data..."
- 	set file=stagingroot_"/gbl/EmployeePictures.xml"
- 	do $system.OBJ.Load(file)
- 	
- 	write !, "Running the Sample.Utils::Generate() method..."
- 	do ##class(Sample.Utils).Generate()
- 	
- 	write !, "Now the classes and data are available. The SQL package name is Sample."
- 	write !, "Try SQL queries in the Management Portal or in the SQL shell."
- 	write !, "To access the SQL shell, enter: do $system.SQL.Shell()"
+    write !, "Please specify the directory that contains this sample."
+    write !, "(This is the directory that contains the README.md and LICENSE files.)", !
+    read stagingroot
+    set OK=$$run(stagingroot,1)
+ 
+    if OK {
+        write !!, "Now the classes and data are available. The SQL package name is Sample."
+        write !, "Try SQL queries in the Management Portal or in the SQL shell."
+        write !, "To access the SQL shell, enter: do $system.SQL.Shell()"
         write !, "Sample query: SELECT * from Sample.Person"
- 	write !, "See the documentation for more information."
+        write !, "See the InterSystems IRIS documentation for more information."
+    }
 
- 	
+run(stagingroot, interactive) public {
+    if '$DATA(interactive) {
+        set interactive=0
+    }
+
+    if $ZSTRIP(stagingroot,"<>W")="" {
+        if interactive {
+            write !, "Not a valid directory... Quitting."
+        }
+        return 0
+    }
+
+    //load and compile classes ***************************
+    if interactive {
+        write !!, "Loading and compiling classes..."
+    }
+    set dir=stagingroot_"/cls/"
+    if '##class(%File).DirectoryExists(dir) {
+        if interactive {
+            write !!, "Looking for "_dir
+            write !, "but it does not exist... Quitting."
+        }
+        return 0
+    }
+    do $system.OBJ.LoadDir(dir,"ck",,1)
+
+
+    //load data from exported global ******************************
+    if interactive {
+        write !, "Loading data..."
+    }
+    set file=stagingroot_"/gbl/EmployeePictures.xml"
+    if '##class(%File).Exists(file) {
+        if interactive {
+            write !!, "Looking for "_file
+            write !, "but it does not exist... Quitting."
+        }
+        return 0
+    }
+    do $system.OBJ.Load(file)
+ 
+    // execute the setup code in the loaded classes *********************
+    if '##class(%Dictionary.CompiledClass).%ExistsId("Sample.Utils") {
+        if interactive {
+            write !!, "Looking for the class Sample.Utils"
+            write !, "but it does not exist... Quitting."
+        }
+        return 0
+    }
+    if interactive {
+        write !, "Running the Sample.Utils::Generate() method..."
+    }
+    do ##class(Sample.Utils).Generate()
+    return 1
+ 
+} 
+
+ 
 
