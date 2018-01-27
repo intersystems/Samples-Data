@@ -54,5 +54,6 @@ Setup instructions
 4. Enter the following commands (replacing with the full path of the buildsample/buildsampledata.rtn file):
 
    do $system.OBJ.Load("full-path-to-buildsampledata.rtn","ck")
-   do ^buildsampledata
+
+do ^buildsampledata
 5. Then answer any prompts.
