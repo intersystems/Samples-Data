@@ -5,7 +5,7 @@ The end of the file has setup instructions.
 Use or operation of this code is subject to acceptance of the license available in the code 
 repository for this code.
 ************************************************************************************
-SAMPLE-DATA is meant for use with the InterSystems IRIS.
+SAMPLES-DATA is meant for use with the InterSystems IRIS.
 There are three purposes for these classes:
 * To provide sample data that you can query via InterSystems IRIS SQL, for any basic 
   proof-of-concept testing. You can query this data via the SQL shell, via the Management Portal, 
@@ -48,12 +48,11 @@ Setup instructions
 ************************************************************************************
 1. Download the repo to your local disk.
 2. Open the InterSystems IRIS Terminal.
-3. Enter the following command, where namespace is the namespace where you want to load the sample:
-   ZN "namespace"
-4. Enter the following commands, where dir is the directory that contains this repo:
-   <p>set file=dir_"/buildsample/buildsampledata.mac"<p>
-   <p>do $system.OBJ.Load(file,"ck")<p>
-   <p>do ^buildsampledata<p>
-   <p>This loads & starts a routine that will load the rest of the sample and generate the data.<p>
-5. Then answer the prompts.
+3. Enter the following command (replacing with the namespace where you want to load the sample):
 
+   ZN "mynamespace"
+4. Enter the following commands (replacing with the full path of the buildsample/buildsampledata.rtn file):
+
+   do $system.OBJ.Load("full-path-to-buildsampledata.rtn","ck")
+   do ^buildsampledata
+5. Then answer any prompts.
