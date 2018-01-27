@@ -55,5 +55,5 @@ Setup instructions
 
    do $system.OBJ.Load("full-path-to-buildsampledata.rtn","ck")
 
-do ^buildsampledata
+   do ^buildsampledata
 5. Then answer any prompts.
