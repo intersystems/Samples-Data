@@ -51,9 +51,9 @@ Setup instructions
 3. Enter the following command (replacing with the namespace where you want to load the sample):
 
    ZN "mynamespace"
-4. Enter the following commands (replacing with the full path of the buildsample/buildsampledata.rtn file):
+4. Enter the following commands (replacing with the full path of the buildsample/buildsampledata.mac file):
 
-   do $system.OBJ.Load("full-path-to-buildsampledata.rtn","ck")
+   do $system.OBJ.Load("full-path-to-buildsampledata.mac","ck")
 
    do ^buildsampledata
 5. Then answer any prompts.
