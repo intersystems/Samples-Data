@@ -25,27 +25,24 @@ There are three purposes for these classes:
 The InterSystems ObjectScript documentation and the InterSystems SQL documentation use these tables and 
 classes extensively. 
 
-************************************************************************************
-Contents of the Sample package
-************************************************************************************
-* Sample.Person represents a person. This class is projected to SQL as the table Sample.Person.
+## Contents of the Sample package
+* `Sample.Person` represents a person. This class is projected to SQL as the table `Sample.Person`.
   Of note:
-  - The properties Home and Office are references to the serial object class Sample.Address.
-  - Age is a calculated property.
-  - ByName is a class query.
-* Sample.Address is a serial object class, representing a street address. Sample.Person uses
-  this class as the type of the Home and Office properties.
-* Sample.Employee is a subclass of Sample.Person. This class is projected to SQL as the table 
-  Sample.Employee. The records for Sample.Employee are also included in the table Sample.Person.
-* Sample.Company represents a company. This class is projected to SQL as the table Sample.Company.
-  Each company has a relationship properties that connects to the Sample.Employee class.
-* Sample.Customer is another sample serial object class.
-* Sample.Vendor demonstrates how to use the %Library.CacheSQLStorage storage class to provide 
+  - The properties `Home` and `Office` are references to the serial object class `Sample.Address`.
+  - `Age` is a calculated property.
+  - `ByName` is a class query.
+* `Sample.Address` is a serial object class, representing a street address. `Sample.Person` uses
+  this class as the type of the `Home` and `Office` properties.
+* `Sample.Employee` is a subclass of `Sample.Person`. This class is projected to SQL as the table 
+  `Sample.Employee`. The records for `Sample.Employee` are also included in the table `Sample.Person`.
+* `Sample.Company` represents a company. This class is projected to SQL as the table `Sample.Company`.
+  Each company has a relationship properties that connects to the `Sample.Employee` class.
+* `Sample.Customer` is another sample serial object class.
+* `Sample.Vendor` demonstrates how to use the `%Library.CacheSQLStorage` storage class to provide 
   custom storage for a persistent class.
 
-************************************************************************************
-Setup instructions
-************************************************************************************
+## Setup instructions
+
 1. Download the repo to your local disk and uncompress it.
 2. Open the InterSystems IRIS Terminal.
 3. Enter the following command (replacing with the namespace where you want to load the sample):
