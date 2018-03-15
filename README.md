@@ -50,10 +50,10 @@ classes extensively.
 ```
    ZN "mynamespace"
    ```
-5. Enter the following commands (replacing with the full path of the `buildsample/buildsampledata.mac` file):
+5. Enter the following commands (replacing with the full path of the `buildsample/Build.DataSample.cls` file):
 ```
-   do $system.OBJ.Load("full-path-to-buildsampledata.mac","ck")
+   do $system.OBJ.Load("full-path-to-Build.DataSample.cls","ck")
 
-   do ^buildsampledata
-   ```
-6. Then answer any prompts.
+   do ##class(Build.DataSample).Build()
+   ```
+6. When prompted, enter the the full path of the directory to which you downloaded this sample. 
