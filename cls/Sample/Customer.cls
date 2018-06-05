@@ -82,7 +82,7 @@ Storage Default
 </Data>
 <State>CustomerState</State>
 <StreamLocation>^Sample.CustomerS</StreamLocation>
-<Type>%Library.CacheSerialState</Type>
+<Type>%Storage.Serial</Type>
 }
 
 }
