@@ -94,7 +94,7 @@ Storage Default
 <IdLocation>^Sample.PersonD</IdLocation>
 <IndexLocation>^Sample.PersonI</IndexLocation>
 <StreamLocation>^Sample.PersonS</StreamLocation>
-<Type>%Library.CacheStorage</Type>
+<Type>%Storage.Persistent</Type>
 }
 
 }
