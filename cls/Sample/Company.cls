@@ -53,7 +53,7 @@ Storage Default
 <Property name="Revenue"/>
 <Property name="TaxID"/>
 <StreamLocation>^Sample.CompanyS</StreamLocation>
-<Type>%Library.CacheStorage</Type>
+<Type>%Storage.Persistent</Type>
 }
 
 }
