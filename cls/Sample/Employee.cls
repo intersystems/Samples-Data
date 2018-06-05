@@ -69,7 +69,7 @@ Storage Default
 <Property name="Salary"/>
 <Property name="Spouse"/>
 <Property name="Title"/>
-<Type>%Library.CacheStorage</Type>
+<Type>%Storage.Persistent</Type>
 }
 
 }
