@@ -1,6 +1,8 @@
+Include %occInclude
+
 /// Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
 /// This class contains a method to generate data for Sample package
-Class Sample.Utils Extends %RegisteredObject
+Class Sample.Utils 
 {
 
 /// Invoke this method to set up the data for these classes.
@@ -16,7 +18,7 @@ ClassMethod Generate(personCount As %Integer = 100)
     do ##class(Sample.Company).%KillExtent()
     do ##class(Sample.Person).%KillExtent()
     do ##class(Sample.Employee).%KillExtent()
-    //do ##class(Sample.Vendor).%KillExtent() ; doesn't work with %CacheSQLStorage 
+    //do ##class(Sample.Vendor).%KillExtent() ; doesn't work with %Storage.SQL 
     
     Set companyCount= personCount \ 5
     If (companyCount < 1) {
