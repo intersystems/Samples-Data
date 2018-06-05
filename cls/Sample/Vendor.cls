@@ -177,7 +177,7 @@ Storage SQLStorage
 <Type>index</Type>
 </SQLMap>
 <StreamLocation>^Sample.VendorS</StreamLocation>
-<Type>%CacheSQLStorage</Type>
+<Type>%Storage.SQL</Type>
 }
 
 }
