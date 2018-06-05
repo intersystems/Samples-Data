@@ -33,7 +33,7 @@ Storage AddressState
 </Data>
 <State>AddressState</State>
 <StreamLocation>^Sample.AddressS</StreamLocation>
-<Type>%Library.CacheSerialState</Type>
+<Type>%Storage.Serial</Type>
 }
 
 }
