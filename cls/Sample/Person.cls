@@ -61,41 +61,5 @@ WHERE (Name %STARTSWITH :name)
 ORDER BY Name
 }
 
-Storage Default
-{
-<Data name="PersonDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>Name</Value>
-</Value>
-<Value name="3">
-<Value>SSN</Value>
-</Value>
-<Value name="4">
-<Value>DOB</Value>
-</Value>
-<Value name="5">
-<Value>Home</Value>
-</Value>
-<Value name="6">
-<Value>Office</Value>
-</Value>
-<Value name="7">
-<Value>Spouse</Value>
-</Value>
-<Value name="8">
-<Value>FavoriteColors</Value>
-</Value>
-</Data>
-<DataLocation>^Sample.PersonD</DataLocation>
-<DefaultData>PersonDefaultData</DefaultData>
-<IdLocation>^Sample.PersonD</IdLocation>
-<IndexLocation>^Sample.PersonI</IndexLocation>
-<StreamLocation>^Sample.PersonS</StreamLocation>
-<Type>%Storage.Persistent</Type>
-}
-
 }
 

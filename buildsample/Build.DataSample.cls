@@ -39,12 +39,12 @@ ClassMethod Build()
 }
 
 /// This method enables you to build the sample with a minimum of output to the Terminal.
-/// <var>stagingroot</var> is the name of the directory that contains the downloaded files. 
-/// <var>interactive</var> controls whether this method displays output.
-/// <methodname>Build</methodname> calls this method with interactive=1.
+/// stagingroot is the name of the directory that contains the downloaded files. 
+/// interactive controls whether this method displays output.
+/// Build calls this method with interactive=1.
 ClassMethod run(stagingroot As %String = "", interactive As %Boolean = 0)
 {
-    //repeat this test here in case we go directly to this method
+    // Repeat this test here in case we go directly to this method
     if $ZSTRIP(stagingroot,"<>W")="" {
         if interactive {
             write !, "Not a valid directory... Quitting."
@@ -52,7 +52,7 @@ ClassMethod run(stagingroot As %String = "", interactive As %Boolean = 0)
         return 0
     }
 
-    //load and compile classes ***************************
+    // Load and compile classes ***************************
     set dir=stagingroot_"/cls/" ;works on both Windows and Unix
     if '##class(%File).DirectoryExists(dir) {
         if interactive {
@@ -66,7 +66,7 @@ ClassMethod run(stagingroot As %String = "", interactive As %Boolean = 0)
     }
     do $system.OBJ.LoadDir(dir,"ck",,1)
 
-    //load data from exported global ******************************
+    // Load data from exported global ******************************
     if interactive {
         write !, "Loading data..."
     }
@@ -80,7 +80,7 @@ ClassMethod run(stagingroot As %String = "", interactive As %Boolean = 0)
     }
     do $system.OBJ.Load(file)
  
-    // execute the setup code in the loaded classes *********************
+    // Execute the setup code in the loaded classes *********************
     if '##class(%Dictionary.CompiledClass).%ExistsId("Sample.Utils") {
         if interactive {
             write !!, "Looking for the class Sample.Utils but it does not exist... Quitting."

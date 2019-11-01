@@ -34,43 +34,5 @@ Method WritePicture()
 	write !, "Generated file: "_filename
 }
 
-Storage Default
-{
-<Data name="EmployeeDefaultData">
-<Subscript>"Employee"</Subscript>
-<Value name="1">
-<Value>Company</Value>
-</Value>
-<Value name="2">
-<Value>Notes</Value>
-</Value>
-<Value name="3">
-<Value>Salary</Value>
-</Value>
-<Value name="4">
-<Value>Title</Value>
-</Value>
-<Value name="5">
-<Value>Picture</Value>
-</Value>
-</Data>
-<DefaultData>EmployeeDefaultData</DefaultData>
-<Property name="%%CLASSNAME"/>
-<Property name="Age"/>
-<Property name="Company"/>
-<Property name="DOB"/>
-<Property name="FavoriteColors"/>
-<Property name="Home"/>
-<Property name="Name"/>
-<Property name="Notes"/>
-<Property name="Office"/>
-<Property name="Picture"/>
-<Property name="SSN"/>
-<Property name="Salary"/>
-<Property name="Spouse"/>
-<Property name="Title"/>
-<Type>%Storage.Persistent</Type>
-}
-
 }
 

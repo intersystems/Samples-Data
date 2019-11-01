@@ -9,29 +9,29 @@ Class Sample.Utils
 /// Create one company for every five people.
 ClassMethod Generate(personCount As %Integer = 100)
 {
-    //make sure we always have at least 1 person
-    If (personCount < 1) {
-        Set personCount=1
+    // Make sure we always have at least 1 person
+    if (personCount < 1) {
+        set personCount=1
         }
         
-    //never use %KillExtent() in a real application
+    // Never use %KillExtent() in a real application
     do ##class(Sample.Company).%KillExtent()
     do ##class(Sample.Person).%KillExtent()
     do ##class(Sample.Employee).%KillExtent()
     //do ##class(Sample.Vendor).%KillExtent() ; doesn't work with %Storage.SQL 
     
-    Set companyCount= personCount \ 5
-    If (companyCount < 1) {
-        Set companyCount=1
+    set companyCount= personCount \ 5
+    if (companyCount < 1) {
+        set companyCount=1
         }
 
-    Do ##class(Sample.Company).Populate(companyCount)
-	Do ##class(Sample.Person).Populate(personCount)
-	Do ##class(Sample.Employee).Populate(personCount,,,,2)
-	Do ##class(Sample.Vendor).Populate(personCount)
+    do ##class(Sample.Company).Populate(companyCount)
+	do ##class(Sample.Person).Populate(personCount)
+	do ##class(Sample.Employee).Populate(personCount,,,,2)
+	do ##class(Sample.Vendor).Populate(personCount)
 	
-	//specify values for stream properties in Sample.Employee
-	//do this for the first lucky 10 employees, for reasons of space
+	// Specify values for stream properties in Sample.Employee
+	// do this for the first lucky 10 employees, for reasons of space
 	
 	set e1=personCount+1 ; ID of the first employee
 	for i=e1:1:e1+9 {
@@ -43,7 +43,7 @@ ClassMethod Generate(personCount As %Integer = 100)
 		         
 		do employee.Notes.Write(text)
 		
-		//add a stock picture (yes, all these employees look alike)
+		// Add a stock picture (yes, all these employees look alike)
 		do employee.Picture.Write($G(^EmployeePictures))
 		
 		do employee.%Save()
