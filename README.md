@@ -55,7 +55,7 @@ classes extensively.
    do $system.OBJ.Load("full-path-to-Build.DataSample.cls","ck")
 
    do ##class(Build.DataSample).Build()
-   ```
+```
 
 6. When prompted, enter the full path of the directory to which you downloaded this sample. The method then loads and compiles the code and performs other needed setup steps.
 
