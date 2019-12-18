@@ -20,69 +20,42 @@ Property TS As %TimeStamp;
 /// <P>If this method returns an error then the object will not be created.
 Method %OnNew(initvalue As %CacheString) As %Status [ Private ]
 {
-	Do ..SetDefault()
-	Quit $$$OK
+	do ..SetDefault()
+	quit $$$OK
 }
 
 Method SetDefault()
 {
-	Do ..MailingAddresses.Clear()
-	Do ..Addresses.Clear()
+	do ..MailingAddresses.Clear()
+	do ..Addresses.Clear()
 	
-	Set l = $listbuild("One Memorial Dr.","Cambridge","MA","02142")
-	Set l1 = $listbuild(l,"Sample.Address")
-	Set a = ##class(Sample.Address).%Open(l1)
-	Do ..MailingAddresses.Insert(a)
+	set l = $listbuild("One Memorial Dr.","Cambridge","MA","02142")
+	set l1 = $listbuild(l,"Sample.Address")
+	set a = ##class(Sample.Address).%Open(l1)
+	do ..MailingAddresses.Insert(a)
 	
-	Set l = $listbuild("768 Beacon St.","Brookline","MA","02446")
-	Set l1 = $listbuild(l,"Sample.Address")
-	Set a = ##class(Sample.Address).%Open(l1)
-	Do ..MailingAddresses.Insert(a)
+	set l = $listbuild("768 Beacon St.","Brookline","MA","02446")
+	set l1 = $listbuild(l,"Sample.Address")
+	set a = ##class(Sample.Address).%Open(l1)
+	do ..MailingAddresses.Insert(a)
 	
-	Set l = $listbuild("825 Third Ave.","New York","NY","10022")
-	Set l1 = $listbuild(l,"Sample.Address")
-	Set a = ##class(Sample.Address).%Open(l1)
-	Do ..Addresses.SetAt(a, "Residence")
+	set l = $listbuild("825 Third Ave.","New York","NY","10022")
+	set l1 = $listbuild(l,"Sample.Address")
+	set a = ##class(Sample.Address).%Open(l1)
+	do ..Addresses.SetAt(a, "Residence")
 	
-	Set l = $listbuild("7722 Main St.","Detroit","MI","48224")
-	Set l1 = $listbuild(l,"Sample.Address")
-	Set a = ##class(Sample.Address).%Open(l1)
-	Do ..Addresses.SetAt(a, "Business")
+	set l = $listbuild("7722 Main St.","Detroit","MI","48224")
+	set l1 = $listbuild(l,"Sample.Address")
+	set a = ##class(Sample.Address).%Open(l1)
+	do ..Addresses.SetAt(a, "Business")
 	
-	Set l = $listbuild("25 Glen Ave","Newton","MA","02459")
-	Set l1 = $listbuild(l,"Sample.Address")
-	Set a = ##class(Sample.Address).%Open(l1)
+	set l = $listbuild("25 Glen Ave","Newton","MA","02459")
+	set l1 = $listbuild(l,"Sample.Address")
+	set a = ##class(Sample.Address).%Open(l1)
 	
-	Set ..MyAddress = a
-	Set ..Name = "Joe Doe, Jr."
-	Set ..Status = "Prospect"
-}
-
-Storage Default
-{
-<Data name="CustomerState">
-<Value name="1">
-<Value>Addresses</Value>
-</Value>
-<Value name="2">
-<Value>MailingAddresses</Value>
-</Value>
-<Value name="3">
-<Value>MyAddress</Value>
-</Value>
-<Value name="4">
-<Value>Name</Value>
-</Value>
-<Value name="5">
-<Value>Status</Value>
-</Value>
-<Value name="6">
-<Value>TS</Value>
-</Value>
-</Data>
-<State>CustomerState</State>
-<StreamLocation>^Sample.CustomerS</StreamLocation>
-<Type>%Storage.Serial</Type>
+	set ..MyAddress = a
+	set ..Name = "Joe Doe, Jr."
+	set ..Status = "Prospect"
 }
 
 }

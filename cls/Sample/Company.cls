@@ -24,37 +24,5 @@ Property Revenue As %Integer;
 /// The <class>Employee</class> objects associated with this <class>Company</class>.
 Relationship Employees As Employee [ Cardinality = many, Inverse = Company ];
 
-Storage Default
-{
-<Data name="CompanyDefaultData">
-<Value name="1">
-<Value>%%CLASSNAME</Value>
-</Value>
-<Value name="2">
-<Value>Mission</Value>
-</Value>
-<Value name="3">
-<Value>Name</Value>
-</Value>
-<Value name="4">
-<Value>Revenue</Value>
-</Value>
-<Value name="5">
-<Value>TaxID</Value>
-</Value>
-</Data>
-<DataLocation>^Sample.CompanyD</DataLocation>
-<DefaultData>CompanyDefaultData</DefaultData>
-<IdLocation>^Sample.CompanyD</IdLocation>
-<IndexLocation>^Sample.CompanyI</IndexLocation>
-<Property name="%%CLASSNAME"/>
-<Property name="Mission"/>
-<Property name="Name"/>
-<Property name="Revenue"/>
-<Property name="TaxID"/>
-<StreamLocation>^Sample.CompanyS</StreamLocation>
-<Type>%Storage.Persistent</Type>
-}
-
 }
 

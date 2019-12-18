@@ -1,9 +1,9 @@
 /// Use or operation of this code is subject to acceptance of the license available in the code repository for this code.
-/// The <class>Vendor</class> class is a persistent class 
+/// The Vendor class is a persistent class 
 /// containing vendor information.<br>
-/// This class demonstrates how to use the <class>%CacheSQLStorage</class> storage 
+/// This class demonstrates how to use the %CacheSQLStorage storage 
 /// class to provide custom storage for a persistent class. Typically the 
-/// <class>%CacheSQLStorage</class> storage class is used to provide object access 
+/// %CacheSQLStorage storage class is used to provide object access 
 /// to previously existing storage structures.
 Class Sample.Vendor Extends (%Persistent, %Populate, %XML.Adaptor) [ SqlRowIdName = Vendor, StorageStrategy = SQLStorage ]
 {
@@ -179,6 +179,5 @@ Storage SQLStorage
 <StreamLocation>^Sample.VendorS</StreamLocation>
 <Type>%Storage.SQL</Type>
 }
-
 }
 
